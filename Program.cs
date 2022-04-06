@@ -11,6 +11,7 @@ Log.Information("Hello, world!");
 int a = 10, b = 0;
 try
 {
+    Loop();
     Log.Debug("Dividing {A} by {B}", a, b);
     Console.WriteLine(a / b);
 }
@@ -21,4 +22,11 @@ catch (Exception ex)
 finally
 {
     Log.CloseAndFlush();
+}
+
+static void Loop(){
+    for (int i = 0; i < 10; i++)
+    {
+        Log.Warning("{numero}",i);    
+    }
 }
